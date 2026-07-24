@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+header{
+    background:#000;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+}
+
+.logo{
+    color:#00bfff;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#00bfff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-top:80px;
+}
+
+.profile{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #00bfff;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero span{
+    color:#00bfff;
+}
+
+.hero p{
+    margin:20px;
+    font-size:20px;
+}
+
+.btn{
+    background:#00bfff;
+    color:white;
+    padding:12px 30px;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#008fcc;
+}
+
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#00bfff;
+    font-size:35px;
+}
+
+.about-box{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.about-box img{
+    width:350px;
+    border-radius:20px;
+}
+
+.about-box p{
+    margin-bottom:20px;
+    line-height:1.8;
+}
+
+.about-box ul{
+    padding-left:20px;
+}
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1b1b1b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3,
+.card p{
+    padding:15px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+input,
+textarea{
+    padding:15px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+textarea{
+    height:150px;
+}
+
+button{
+    background:#00bfff;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#008fcc;
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:30px;
+}
+
+.social{
+    margin-top:20px;
+}
+
+.social a{
+    color:white;
+    margin:0 10px;
+    font-size:24px;
+    transition:.3s;
+}
+
+.social a:hover{
+    color:#00bfff;
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.about-box{
+    flex-direction:column;
+    text-align:center;
+}
+
+.about-box img{
+    width:100%;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<h2 class="logo">MyPortfolio</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<!-- ===========================
+     YOUR PROFILE PHOTO HERE
+     Replace images/profile.jpg
+============================ -->
+<img src="blaugrana.png" class="profile" alt="Profile Photo">
+
+<h1>Hi, I'm <span>AbdulQuadri</span></h1>
+
+<p>Web Developer • Designer • Freelancer</p>
+
+<a href="#contact" class="btn">Hire Me</a>
+
+</section>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="about-box">
+
+<!-- ===========================
+     YOUR ABOUT PHOTO HERE
+============================ -->
+<img src="images/about.jpg" alt="About Me">
+
+<div>
+
+<p>
+Write a short introduction about yourself here.
+Tell people who you are, your skills, education,
+experience, hobbies and goals.
+</p>
+
+<h3>Skills</h3>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>UI/UX Design</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>My Projects</h2>
+
+<div class="project-container">
+
+<div class="card">
+
+<!-- PROJECT IMAGE -->
+<img src="images/project1.jpg" alt="Project">
+
+<h3>Project One</h3>
+
+<p>Describe your project here.</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/project2.jpg" alt="Project">
+
+<h3>Project Two</h3>
+
+<p>Describe your project here.</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/project3.jpg" alt="Project">
+
+<h3>Project Three</h3>
+
+<p>Describe your project here.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>My Gallery</h2>
+
+<div class="gallery">
+
+<!-- ===========================
+     ADD YOUR PHOTOS HERE
+============================ -->
+
+<img src="images/photo1.jpg" alt="">
+<img src="images/photo2.jpg" alt="">
+<img src="images/photo3.jpg" alt="">
+<img src="images/photo4.jpg" alt="">
+<img src="images/photo5.jpg" alt="">
+<img src="images/photo6.jpg" alt="">
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© 2026 Your Name | All Rights Reserved</p>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+</div>
+
+</footer>
+
+</body>
+</html>
